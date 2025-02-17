@@ -7,6 +7,11 @@ export const YTLOGOURL =
 export const USERLOGOURL =
   "https://static.vecteezy.com/system/resources/previews/000/574/512/original/vector-sign-of-user-icon.jpg";
 
+const GOOGLE_API_KEY = "AIzaSyAl8eIeCzimrL6zXzHlhnRZ8CMll9-wWTI";
+
+export const YT_VIDEOES_API =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=AIzaSyDz1nszKgOUy-8lbjzsqmFBTn-ac5Tte-M";
+
 export const buttonList = [
   "All",
   "Music",
