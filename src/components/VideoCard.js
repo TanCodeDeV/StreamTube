@@ -1,17 +1,15 @@
 import React from "react";
 
 const VideoCard = ({ info }) => {
-  console.log("video card");
-  console.log(info);
+  //console.log("video card");
+  //console.log(info);
   const thumbnail_url = info?.snippet?.thumbnails?.default?.url;
   const title = info?.snippet?.title;
   const channelTitle = info?.snippet?.channelTitle;
   const views = info?.statistics.viewCount;
-  console.log(title);
-  console.log(channelTitle);
-  console.log(views);
+
   return (
-    <div className="m-2 p-2 hover:cursor-pointer">
+    <div className="m-2 p-2 shadow-sm hover:cursor-pointer">
       <div className="ml-4 mt-2">
         <img
           className="w-[300px] h-[180px] rounded-md hover:rounded-none hover:w-[305px] hover:h-[185px]"
