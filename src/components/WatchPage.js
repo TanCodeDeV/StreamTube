@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import { useSearchParams } from "react-router";
-import { YT_VIDEOES_COMMENTS } from "../utils/Constants";
+import { data, useSearchParams } from "react-router";
+import { YT_VIDEOES_COMMENTS, suggestion_API_YT } from "../utils/Constants";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -16,12 +16,13 @@ const WatchPage = () => {
 
   const [comments, setComments] = useState([]);
   const getYTComments = async () => {
-    const video = await fetch("Comments_URL");
+    const video = await fetch();
     const data = await video.json();
     console.log("comments");
     console.log(data);
-    setComments(data?.items);
+    setComments(data?.items || []);
   };
+
   return (
     <div className="px-5">
       <iframe
