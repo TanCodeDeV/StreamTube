@@ -5,8 +5,9 @@ import {
   USERLOGOURL,
   suggestion_API_YT,
 } from "../utils/Constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { cacheResults } from "../utils/searchSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -19,9 +20,18 @@ const Header = () => {
   const [showSuggestion, setShowSuggetion] = useState(false);
   // console.log("serach Query");
   //console.log(searchQuery);
+
+  const serachChache = useSelector((store) => store.search);
   //debouncing
+
   useEffect(() => {
-    const timer = setTimeout(() => suggestionAPiYT(), 200);
+    const timer = setTimeout(() => {
+      if (serachChache[searchQuery]) {
+        setSuggestionArray(serachChache[searchQuery]);
+      } else {
+        suggestionAPiYT();
+      }
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -36,6 +46,12 @@ const Header = () => {
       const data = await result.json();
       const dataArray = data[1];
       setSuggestionArray(dataArray);
+      //update serach cache
+      dispatch(
+        cacheResults({
+          [searchQuery]: dataArray,
+        })
+      );
       //console.log("YT Suggestion API", data[1]);
     } catch (error) {
       console.error("Error fetching YT Suggestions:", error);
@@ -45,13 +61,13 @@ const Header = () => {
     <div className="flex justify-between h-[70px] shadow-md">
       <div className="flex">
         <img
-          className="h-[60px] w-auto p-2 m-1 hover:cursor-pointer"
+          className="h-[40px] items-center mt-3 w-auto p-2 m-1 hover:cursor-pointer"
           src={HAMICONURL}
           alt="menu"
           onClick={toggleSideBar}
         ></img>
         <img
-          className="h-[60px] w-auto p-2 m-1"
+          className="h-[40px] items-center mt-3 w-auto p-2 m-1"
           src={YTLOGOURL}
           alt="yt-logo"
         ></img>
