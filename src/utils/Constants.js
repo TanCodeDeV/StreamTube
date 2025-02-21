@@ -26,3 +26,98 @@ export const buttonList = [
   "Watched",
   "New to You",
 ];
+
+export const commentsData = [
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [
+      {
+        name: "Revati Bhave",
+        text: "Yess you are right!! ",
+        replies: [
+          {
+            name: "Maya Ranade",
+            text: "I agree!! ",
+            replies: [
+              {
+                name: "Revati Bhave",
+                text: "Thanks Maya!! ",
+                replies: [],
+              },
+              {
+                name: "Revati Bhave",
+                text: "You are really sweet!! ",
+                replies: [
+                  {
+                    name: "Neeraj Ranade",
+                    text: "Ohhoo kay gul lavtay😂!! ",
+                    replies: [
+                      {
+                        name: "Tanmayi Bhave",
+                        text: "Aeee gape makada ugach 3.5 shahanpan karu nakos😒!! ",
+                        replies: [
+                          {
+                            name: "Neeraj Ranade",
+                            text: "Bara bai sorryy❤️!! ",
+                            replies: [
+                              {
+                                name: "Tanmayi Bhave",
+                                text: "Hanna ata kasa😎!! ",
+                                replies: [],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Tanmayi Bhave",
+        text: "Really  a great video",
+        replies: [],
+      },
+    ],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+  {
+    name: "Tanmayi Bhave",
+    text: "Woww what a great video",
+    replies: [],
+  },
+];

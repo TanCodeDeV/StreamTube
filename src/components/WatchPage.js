@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { data, useSearchParams } from "react-router";
 import { YT_VIDEOES_COMMENTS, suggestion_API_YT } from "../utils/Constants";
+import CommentsContainer from "./CommentsContainer";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -11,17 +12,17 @@ const WatchPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(toggleMenu());
-    getYTComments();
+    //getYTComments();
   }, []);
 
-  const [comments, setComments] = useState([]);
-  const getYTComments = async () => {
-    const video = await fetch();
-    const data = await video.json();
-    console.log("comments");
-    console.log(data);
-    setComments(data?.items || []);
-  };
+  // const [comments, setComments] = useState([]);
+  // const getYTComments = async () => {
+  //   const video = await fetch(YT_VIDEOES_COMMENTS);
+  //   const data = await video.json();
+  //   console.log("comments");
+  //   console.log(data);
+  //   setComments(data?.items || []);
+  // };
 
   return (
     <div className="px-5">
@@ -36,6 +37,9 @@ const WatchPage = () => {
         allowFullScreen
       ></iframe>
       <div>
+        <CommentsContainer></CommentsContainer>
+      </div>
+      {/* <div>
         <div className="p-2 m-2">
           <h1 className="font-bold text-2xl">{comments.length} Comments</h1>
           {comments.map((comment) => (
@@ -44,7 +48,7 @@ const WatchPage = () => {
             </li>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
