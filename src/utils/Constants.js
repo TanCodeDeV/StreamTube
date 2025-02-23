@@ -56,11 +56,11 @@ export const commentsData = [
                 replies: [
                   {
                     name: "Neeraj Ranade",
-                    text: "Ohhoo kay gul lavtay😂!! ",
+                    text: "Ohhoo Aai kay gul lavtay😂!! ",
                     replies: [
                       {
                         name: "Tanmayi Bhave",
-                        text: "Aeee gape makada ugach 3.5 shahanpan karu nakos😒!! ",
+                        text: "Aeee gape makada ugach 3.5 shahanpana karu nakos😒!! ",
                         replies: [
                           {
                             name: "Neeraj Ranade",

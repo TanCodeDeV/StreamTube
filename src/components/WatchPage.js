@@ -4,6 +4,7 @@ import { toggleMenu } from "../utils/appSlice";
 import { data, useSearchParams } from "react-router";
 import { YT_VIDEOES_COMMENTS, suggestion_API_YT } from "../utils/Constants";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -25,21 +26,22 @@ const WatchPage = () => {
   // };
 
   return (
-    <div className="px-5">
-      <iframe
-        width="932"
-        height="524"
-        src={"https://www.youtube.com/embed/" + searchYTVideo}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
-      <div>
-        <CommentsContainer></CommentsContainer>
-      </div>
-      {/* <div>
+    <div className="w-full flex">
+      <div className="px-5 w-full">
+        <iframe
+          width="932"
+          height="524"
+          src={"https://www.youtube.com/embed/" + searchYTVideo}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <div>
+          <CommentsContainer></CommentsContainer>
+        </div>
+        {/* <div>
         <div className="p-2 m-2">
           <h1 className="font-bold text-2xl">{comments.length} Comments</h1>
           {comments.map((comment) => (
@@ -49,6 +51,10 @@ const WatchPage = () => {
           ))}
         </div>
       </div> */}
+      </div>
+      <div className=" w-full mx-5 font-bold">
+        <LiveChat />
+      </div>
     </div>
   );
 };
